@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechNova Solutions</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f6fb;
+    color: #243047;
+}
+
+header {
+    background: #101d38;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    min-height: 440px;
+    padding: 100px 8%;
+    background: linear-gradient(120deg, #10203f, #176a9c);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0ea5e9;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 13px 23px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background: #0284c7;
+}
+
+.btn-secondary {
+    background: #263b5e;
+}
+
+.section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.section-intro {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    text-align: left;
+}
+
+.card h3 {
+    color: #12618e;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.form-container {
+    max-width: 520px;
+    margin: 55px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #10203f;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0ea5e9;
+}
+
+.form-container button {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.message {
+    max-width: 520px;
+    margin: 20px auto;
+    padding: 13px;
+    border-radius: 6px;
+    text-align: center;
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.message.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.dashboard {
+    padding: 45px 7%;
+}
+
+.dashboard h1 {
+    margin-bottom: 12px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 25px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+th, td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: #10203f;
+    color: white;
+}
+
+tr:hover {
+    background: #f1f5f9;
+}
+
+.profile {
+    background: white;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 10px;
+    line-height: 2;
+}
+
+footer {
+    background: #101d38;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero {
+        padding: 70px 7%;
+    }
+
+    .form-container {
+        margin: 30px 15px;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TechNova <span>Solutions</span></div>
+
+    <nav id="navigation">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" id="registerLink" onclick="showPage('register')">Register</a>
+        <a href="#" id="loginLink" onclick="showPage('login')">Login</a>
+        <a href="#" id="dashboardLink" class="hidden"
+           onclick="showPage('dashboard')">Dashboard</a>
+        <a href="#" id="logoutLink" class="hidden"
+           onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<div id="message" class="hidden message"></div>
+
+<!-- HOME -->
+<section id="homePage">
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to TechNova Solutions</h1>
+
+            <p>
+                Building innovative digital solutions through technology,
+                teamwork and creativity. We provide a professional environment
+                where employees can grow and achieve success.
+            </p>
+
+            <a class="btn" href="#" onclick="showPage('register')">
+                Join Our Team
+            </a>
+
+            <a class="btn btn-secondary" href="#"
+               onclick="showPage('login')">
+                Company Login
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>About Our Company</h2>
+
+        <p class="section-intro">
+            TechNova Solutions is committed to providing quality technology
+            services and creating opportunities for professional development.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To deliver innovative and reliable technology solutions.</p>
+            </div>
+
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To become a trusted company through excellence and innovation.</p>
+            </div>
+
+            <div class="card">
+                <h3>Our Team</h3>
+                <p>We believe in teamwork, creativity and professional growth.</p>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<!-- REGISTRATION -->
+<section id="registerPage" class="hidden">
+
+    <div class="form-container">
+        <h2>Employee Registration</h2>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="full_name"
+                       pattern="[a-zA-Z ]+" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" name="phone"
+                       maxlength="10" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Department</label>
+                <select name="department" required>
+                    <option value="">Select Department</option>
+                    <option>IT</option>
+                    <option>Human Resources</option>
+                    <option>Finance</option>
+                    <option>Marketing</option>
+                    <option>Sales</option>
+                    <option>Administration</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Designation</label>
+                <input type="text" name="designation" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password"
+                       minlength="8" required>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password"
+                       minlength="8" required>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+
+        <p style="text-align:center;">
+            Already registered?
+            <a href="#" onclick="showPage('login')">Login here</a>
+        </p>
+    </div>
+
+</section>
+
+<!-- LOGIN -->
+<section id="loginPage" class="hidden">
+
+    <div class="form-container">
+        <h2>Company Login</h2>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email"
+                       placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password"
+                       placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p style="text-align:center;">
+            New employee?
+            <a href="#" onclick="showPage('register')">
+                Create an account
+            </a>
+        </p>
+    </div>
+
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboardPage" class="hidden">
+
+    <section class="dashboard">
+
+        <h1 id="dashboardTitle">Dashboard</h1>
+
+        <p>Welcome, <strong id="userName"></strong></p>
+
+        <div class="profile">
+            <h3>My Account Details</h3>
+
+            <p><strong>Name:</strong> <span id="profileName"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Role:</strong> <span id="profileRole"></span></p>
+        </div>
+
+        <div id="employeeSection" class="hidden">
+
+            <h2 style="margin-top:35px;">All Employee Details</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Department</th>
+                            <th>Designation</th>
+                            <th>Joined Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTable"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="adminSection" class="hidden">
+
+            <h2 style="margin-top:35px;">Admin Details</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Admin Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Department</th>
+                            <th>Designation</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="adminTable"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <br>
+        <button class="btn" onclick="logout()">Logout</button>
+
+    </section>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 TechNova Solutions. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+const API = "backend.php";
+
+function showMessage(message, success = false) {
+
+    const box = document.getElementById("message");
+
+    box.textContent = message;
+    box.className = success
+        ? "message success"
+        : "message";
+
+    box.scrollIntoView({behavior: "smooth"});
+}
+
+function hideMessage() {
+    document.getElementById("message").className = "hidden message";
+}
+
+function showPage(page) {
+
+    hideMessage();
+
+    document.querySelectorAll(
+        "#homePage, #registerPage, #loginPage, #dashboardPage"
+    ).forEach(section => section.classList.add("hidden"));
+
+    if (page === "dashboard") {
+        loadDashboard();
+        return;
+    }
+
+    document.getElementById(page + "Page").classList.remove("hidden");
+
+    window.scrollTo(0, 0);
+}
+
+function updateNavigation(loggedIn) {
+
+    document.getElementById("registerLink").classList.toggle("hidden", loggedIn);
+    document.getElementById("loginLink").classList.toggle("hidden", loggedIn);
+    document.getElementById("dashboardLink").classList.toggle("hidden", !loggedIn);
+    document.getElementById("logoutLink").classList.toggle("hidden", !loggedIn);
+}
+
+/* REGISTER */
+document.getElementById("registerForm").addEventListener(
+    "submit", async function(e) {
+
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    if (formData.get("password") !== formData.get("confirm_password")) {
+        showMessage("Passwords do not match.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch(API + "?action=register", {
+            method: "POST",
+            body: formData,
+            credentials: "same-origin"
+        });
+
+        const data = await response.json();
+
+        showMessage(data.message, data.success);
+
+        if (data.success) {
+            this.reset();
+            setTimeout(() => showPage("login"), 1200);
+        }
+
+    } catch (error) {
+        showMessage("Server error. Please try again.");
+    }
+});
+
+/* LOGIN */
+document.getElementById("loginForm").addEventListener(
+    "submit", async function(e) {
+
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    try {
+
+        const response = await fetch(API + "?action=login", {
+            method: "POST",
+            body: formData,
+            credentials: "same-origin"
+        });
+
+        const data = await response.json();
+
+        showMessage(data.message, data.success);
+
+        if (data.success) {
+            this.reset();
+            updateNavigation(true);
+            setTimeout(() => showPage("dashboard"), 700);
+        }
+
+    } catch (error) {
+        showMessage("Server error. Please try again.");
+    }
+});
+
+/* DASHBOARD */
+async function loadDashboard() {
+
+    try {
+
+        const response = await fetch(API + "?action=dashboard", {
+            credentials: "same-origin"
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+            updateNavigation(false);
+            showMessage(data.message);
+            document.getElementById("loginPage").classList.remove("hidden");
+            return;
+        }
+
+        updateNavigation(true);
+
+        document.getElementById("dashboardPage").classList.remove("hidden");
+
+        document.getElementById("userName").textContent = data.name;
+        document.getElementById("profileName").textContent = data.name;
+        document.getElementById("profileEmail").textContent = data.email;
+        document.getElementById("profileRole").textContent = data.role;
+
+        const isAdmin = data.role === "admin";
+
+        document.getElementById("dashboardTitle").textContent =
+            isAdmin ? "Admin Dashboard" : "Employee Dashboard";
+
+        document.getElementById("employeeSection").classList.toggle(
+            "hidden", !isAdmin
+        );
+
+        document.getElementById("adminSection").classList.toggle(
+            "hidden", isAdmin
+        );
+
+        if (isAdmin) {
+            renderEmployees(data.employees || []);
+        } else {
+            renderAdmins(data.admins || []);
+        }
+
+        window.scrollTo(0, 0);
+
+    } catch (error) {
+        showMessage("Unable to load dashboard.");
+    }
+}
+
+/* EMPLOYEE TABLE */
+function renderEmployees(employees) {
+
+    const table = document.getElementById("employeeTable");
+
+    table.replaceChildren();
+
+    if (employees.length === 0) {
+        table.innerHTML =
+            '<tr><td colspan="7">No employees registered yet.</td></tr>';
+        return;
+    }
+
+    employees.forEach(employee => {
+
+        const tr = document.createElement("tr");
+
+        [
+            employee.id,
+            employee.full_name,
+            employee.email,
+            employee.phone,
+            employee.department,
+            employee.designation,
+            employee.created_at
+        ].forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value ?? "";
+            tr.appendChild(td);
+        });
+
+        table.appendChild(tr);
+    });
+}
+
+/* ADMIN TABLE */
+function renderAdmins(admins) {
+
+    const table = document.getElementById("adminTable");
+
+    table.replaceChildren();
+
+    if (admins.length === 0) {
+        table.innerHTML =
+            '<tr><td colspan="6">No admin details found.</td></tr>';
+        return;
+    }
+
+    admins.forEach(admin => {
+
+        const tr = document.createElement("tr");
+
+        [
+            admin.id,
+            admin.full_name,
+            admin.email,
+            admin.phone,
+            admin.department,
+            admin.designation
+        ].forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value ?? "";
+            tr.appendChild(td);
+        });
+
+        table.appendChild(tr);
+    });
+}
+
+/* LOGOUT */
+async function logout() {
+
+    try {
+
+        const response = await fetch(API + "?action=logout", {
+            credentials: "same-origin"
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            updateNavigation(false);
+            showPage("home");
+            showMessage("Logged out successfully.", true);
+        }
+
+    } catch (error) {
+        showMessage("Logout failed. Please try again.");
+    }
+}
+
+/* CHECK EXISTING SESSION */
+async function checkSession() {
+
+    try {
+
+        const response = await fetch(API + "?action=check", {
+            credentials: "same-origin"
+        });
+
+        const data = await response.json();
+
+        if (data.success && data.loggedIn !== false &&
+            data.role) {
+            updateNavigation(true);
+            showPage("dashboard");
+        } else {
+            updateNavigation(false);
+            showPage("home");
+        }
+
+    } catch (error) {
+        updateNavigation(false);
+        showPage("home");
+    }
+}
+
+checkSession();
+
+</script>
+
+</body>
+</html>
