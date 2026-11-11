@@ -1,52 +1,151 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Internet &amp; Web Technologies Lab | M. Kuppusamy</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#d9ecff,#eff7ff 55%,#d8eaff);color:#26384d;line-height:1.6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#d9ecff,#eff7ff 55%,#d8eaff);color:#26384d;line-height:1.6}
 header{text-align:center;padding:42px 18px;background:linear-gradient(120deg,#8fc5f2,#b8dcfa);border-bottom:3px solid white}
-header h3{color:#365b7d;font-weight:500;letter-spacing:1px}header h1{font-size:clamp(1.8rem,4vw,2.5rem);margin:8px 0;color:#203a55}header p{color:#496986}
-.wrap{width:90%;max-width:1120px;margin:auto}.back{display:inline-block;margin:22px 0 0;color:#245b8b;text-decoration:none;font-weight:600}
+header h3{color:#365b7d;font-weight:500;letter-spacing:1px}
+header h1{font-size:clamp(1.8rem,4vw,2.5rem);margin:8px 0;color:#203a55}
+header p{color:#496986}
+.wrap{width:90%;max-width:1120px;margin:auto}
+.back{display:inline-block;margin:22px 0 0;color:#245b8b;text-decoration:none;font-weight:600}
 .profile{display:flex;align-items:center;gap:32px;background:white;border-radius:24px;padding:30px;margin:28px auto;box-shadow:0 14px 35px #38658b20}
 .avatar{width:170px;height:170px;flex:0 0 170px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#d7edff,#83b8e8);border:7px solid #e6f3ff;box-shadow:0 8px 22px #477da833;font-size:3rem;font-weight:700;color:#245b8b}
-.details{flex:1}.details h2{font-size:2rem;margin-bottom:12px;color:#263f59}.details table{width:100%;border-collapse:collapse}.details td{padding:7px 9px;border-bottom:1px solid #edf2f7;font-size:.95rem}.details td:first-child{font-weight:600;color:#365b7d;width:145px}
-.welcome{background:white;border-radius:22px;padding:27px 30px;margin-bottom:34px;box-shadow:0 12px 30px #38658b18}.welcome h2{margin-bottom:8px;color:#274967}.welcome p{color:#62788d}
-.experiments h2{font-size:1.7rem;margin-bottom:18px;color:#274967}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+.details{flex:1}
+.details h2{font-size:2rem;margin-bottom:12px;color:#263f59}
+.details table{width:100%;border-collapse:collapse}
+.details td{padding:7px 9px;border-bottom:1px solid #edf2f7;font-size:.95rem}
+.details td:first-child{font-weight:600;color:#365b7d;width:145px}
+.welcome{background:white;border-radius:22px;padding:27px 30px;margin-bottom:34px;box-shadow:0 12px 30px #38658b18}
+.welcome h2{margin-bottom:8px;color:#274967}
+.welcome p{color:#62788d}
+.experiments h2{font-size:1.7rem;margin-bottom:18px;color:#274967}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
 .card{display:block;text-decoration:none;color:#2b4055;background:white;border-radius:20px;padding:24px 20px;text-align:center;box-shadow:0 10px 28px #315b7c20;transition:.3s;position:relative;overflow:hidden;border:1px solid #e5eff8}
 .card:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-60px;top:-70px;background:#dceeff;transition:.3s}
-.card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:0 17px 35px #315b7c35;border-color:#80b9e9}.card:hover:before{transform:scale(1.5)}
-.icon{position:relative;width:68px;height:68px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:#e5f3ff;color:#3978ad}.icon .material-icons{font-size:34px}.card h3{font-size:1.1rem;margin-bottom:6px}.card p{font-size:.88rem;color:#71869a}.tag{display:inline-block;margin-top:13px;padding:5px 12px;border-radius:20px;background:#edf6ff;color:#3978ad;font-size:.76rem;font-weight:600}
+.card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:0 17px 35px #315b7c35;border-color:#80b9e9}
+.card:hover:before{transform:scale(1.5)}
+.icon{position:relative;width:68px;height:68px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:#e5f3ff;color:#3978ad}
+.icon .material-icons{font-size:34px}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{font-size:.88rem;color:#71869a}
+.tag{display:inline-block;margin-top:13px;padding:5px 12px;border-radius:20px;background:#edf6ff;color:#3978ad;font-size:.76rem;font-weight:600}
 footer{text-align:center;padding:26px;background:#a9d2f3;color:#365b7d;margin-top:30px}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.profile{flex-direction:column;text-align:center}.details td{text-align:left}}
 @media(max-width:540px){.grid{grid-template-columns:1fr}.profile{padding:22px}.avatar{width:135px;height:135px;flex-basis:135px}.details h2{font-size:1.6rem}.details td{font-size:.85rem}}
-</style></head>
+</style>
+</head>
 <body>
-<header><h3>Pondicherry University</h3><h1>Internet &amp; Web Technologies Laboratory</h1><p>Student Dashboard · Academic Portfolio</p></header>
+
+<header>
+<h3>Pondicherry University</h3>
+<h1>Internet &amp; Web Technologies Laboratory</h1>
+<p>Student Dashboard · Academic Portfolio</p>
+</header>
+
 <main class="wrap">
+
 <a class="back" href="../index.html">← Back to Portfolio</a>
+
 <section class="profile">
 <div class="avatar">MK</div>
-<div class="details"><h2>M. Kuppusamy</h2>
+<div class="details">
+<h2>M. Kuppusamy</h2>
 <table>
 <tr><td>Department</td><td>MCA</td></tr>
 <tr><td>University</td><td>Pondicherry University</td></tr>
 <tr><td>Course</td><td>Internet &amp; Web Technologies</td></tr>
 <tr><td>Academic status</td><td>MCA – Currently Pursuing</td></tr>
-</table></div></section>
-<section class="welcome"><h2>Welcome 👋</h2><p>This dashboard provides access to the Internet &amp; Web Technologies laboratory exercises. Select an exercise card below to open the corresponding project.</p></section>
-<section class="experiments"><h2>Laboratory Experiments</h2><div class="grid">
-<a class="card" href="Book%20Data/index.html"><div class="icon"><span class="material-icons">menu_book</span></div><h3>Book Data</h3><p>Book information and library data</p><span class="tag">Exercise 01</span></a>
-<a class="card" href="Calculator/index.html"><div class="icon"><span class="material-icons">calculate</span></div><h3>Calculator</h3><p>Interactive calculator application</p><span class="tag">Exercise 02</span></a>
-<a class="card" href="Company%20Website/index.php"><div class="icon"><span class="material-icons">business</span></div><h3>Company Website</h3><p>Company information website</p><span class="tag">Exercise 03</span></a>
-<a class="card" href="Contact%20Management/index.php"><div class="icon"><span class="material-icons">contacts</span></div><h3>Contact Management</h3><p>Contact management application</p><span class="tag">Exercise 04</span></a>
-<a class="card" href="Department%20Website/index.php"><div class="icon"><span class="material-icons">school</span></div><h3>Department Website</h3><p>Computer science department portal</p><span class="tag">Exercise 05</span></a>
-<a class="card" href="Employee%20Details/index.php"><div class="icon"><span class="material-icons">badge</span></div><h3>Employee Details</h3><p>Employee details management</p><span class="tag">Exercise 06</span></a>
-<a class="card" href="Online%20Shopping/index.html"><div class="icon"><span class="material-icons">shopping_cart</span></div><h3>Online Shopping</h3><p>Online shopping interface</p><span class="tag">Exercise 07</span></a>
-<a class="card" href="Quiz/index.html"><div class="icon"><span class="material-icons">quiz</span></div><h3>Quiz</h3><p>Interactive quiz application</p><span class="tag">Exercise 08</span></a>
-<a class="card" href="Weather%20Application/index.html"><div class="icon"><span class="material-icons">cloud</span></div><h3>Weather Application</h3><p>Weather information application</p><span class="tag">Exercise 09</span></a>
-</div></section></main>
-<footer>Designed &amp; Developed by <strong>M. Kuppusamy</strong> · Internet &amp; Web Technologies Laboratory</footer>
-</body></html>
+</table>
+</div>
+</section>
+
+<section class="welcome">
+<h2>Welcome 👋</h2>
+<p>This dashboard provides access to the Internet &amp; Web Technologies laboratory exercises. Select an exercise card below to open the corresponding project.</p>
+</section>
+
+<section class="experiments">
+<h2>Laboratory Experiments</h2>
+<div class="grid">
+
+<a class="card" href="Book%20Data/index.html">
+<div class="icon"><span class="material-icons">menu_book</span></div>
+<h3>Book Data</h3>
+<p>Book information and library data</p>
+<span class="tag">Exercise 01</span>
+</a>
+
+<a class="card" href="Calculator/index.html">
+<div class="icon"><span class="material-icons">calculate</span></div>
+<h3>Calculator</h3>
+<p>Interactive calculator application</p>
+<span class="tag">Exercise 02</span>
+</a>
+
+<a class="card" href="https://kuppusamywebtech.infinityfreeapp.com/Kuppusamy/Company%20Website/index.php">
+<div class="icon"><span class="material-icons">business</span></div>
+<h3>Company Website</h3>
+<p>Company information website</p>
+<span class="tag">Exercise 03</span>
+</a>
+
+<a class="card" href="https://kuppusamywebtech.infinityfreeapp.com/Kuppusamy/Contact%20Management/index.php">
+<div class="icon"><span class="material-icons">contacts</span></div>
+<h3>Contact Management</h3>
+<p>Contact management application</p>
+<span class="tag">Exercise 04</span>
+</a>
+
+<a class="card" href="https://kuppusamywebtech.infinityfreeapp.com/Kuppusamy/Department%20Website/index.php">
+<div class="icon"><span class="material-icons">school</span></div>
+<h3>Department Website</h3>
+<p>Computer science department portal</p>
+<span class="tag">Exercise 05</span>
+</a>
+
+<a class="card" href="https://kuppusamywebtech.infinityfreeapp.com/Kuppusamy/Employee%20Details/index.php">
+<div class="icon"><span class="material-icons">badge</span></div>
+<h3>Employee Details</h3>
+<p>Employee details management</p>
+<span class="tag">Exercise 06</span>
+</a>
+
+<a class="card" href="Online%20Shopping/index.html">
+<div class="icon"><span class="material-icons">shopping_cart</span></div>
+<h3>Online Shopping</h3>
+<p>Online shopping interface</p>
+<span class="tag">Exercise 07</span>
+</a>
+
+<a class="card" href="Quiz/index.html">
+<div class="icon"><span class="material-icons">quiz</span></div>
+<h3>Quiz</h3>
+<p>Interactive quiz application</p>
+<span class="tag">Exercise 08</span>
+</a>
+
+<a class="card" href="Weather%20Application/index.html">
+<div class="icon"><span class="material-icons">cloud</span></div>
+<h3>Weather Application</h3>
+<p>Weather information application</p>
+<span class="tag">Exercise 09</span>
+</a>
+
+</div>
+</section>
+</main>
+
+<footer>
+Designed &amp; Developed by <strong>M. Kuppusamy</strong> · Internet &amp; Web Technologies Laboratory
+</footer>
+
+</body>
+</html>
